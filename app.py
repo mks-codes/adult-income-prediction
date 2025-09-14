@@ -1,12 +1,12 @@
 import streamlit as st
 import pandas as pd
-import pickle
+import joblib
 import os
 BASE_DIR = os.path.dirname(__file__)  
-model_path = os.path.join(BASE_DIR, "model.pkl")
+model_path = os.path.join(BASE_DIR, "pipe.pkl")
 
 with open(model_path, "rb") as f:
-    model = pickle.load(f)
+    model = joblib.load(f)
 
 st.set_page_config(page_title="Income Prediction App", layout="centered")
 st.title("Income Prediction")
